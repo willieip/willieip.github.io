@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Willie site</title>
+    </head>
+    <body>
+
+    <style>
+
+          body {
+        --theme-primary: #000000;
+        --theme-secondary: #ffffff;
+
+        background: var(--theme-secondary);
+        color: var(--theme-primary);
+        }
+
+        .container {
+            margin: 30px;
+            font-family: 'Neue Haas Unica W01 Regular', Helvetica, sans-serif;
+            font-size: 18px;
+            line-height: 24px;
+        }
+
+        .left {
+            width: 50%;
+            float: left;
+        }
+
+        .right {
+            width: 50%;
+            float: right;
+
+        }
+
+        .block {
+            border-bottom: 1px solid var(--theme-primary);
+            display: inline-block;
+            width: 100%;
+        }
+
+        .work__image {
+            height: 100px;
+            width: auto;
+            margin-left: 3px;
+        }
+
+        .work__image img {
+            height: 100%;
+
+        }
+
+        .current,
+        .previous,
+        .work,
+        .contact {
+            padding: 20px 0;
+        }
+
+        @media only screen  and (min-width : 1024px) {
+            .container {
+                margin: 50px;
+                font-size: 36px;
+                line-height: 48px;
+            }
+
+            .current,
+            .previous,
+            .work,
+            .contact {
+                padding: 30px 0;
+            }
+
+            .work__image {
+                width: auto;
+                height: 325px;
+            }
+        }
+
+    </style>
+        <div class="container">
+            <div class="current block">
+                <div class="current__left left">
+                    Willie Ip
+                </div>
+                <div class="current__right right">
+                    Is a graphic designer, based in New York. He received his BFA
+                    in Graphic Design from
+                    <a style="color:var(--theme-primary)" href="http://www.purchase.design/"> Purchase College, School of Art and Design </a>
+                    <br>
+                    <br>
+                    <MARQUEE behavior="scroll" direction="left" width="75%" scrollamount="15">Currently available for collaboration </MARQUEE>
+                    <br>
+                    <MARQUEE behavior="scroll" direction="right" width="75%" scrollamount="15">Currently designing things at <a style="color:var(--theme-primary)" <a href="http://wwww.genius.com"> Genius </a> </MARQUEE>
+                    <br>
+                    <br>
+
+                    <a style="color:var(--theme-primary)" href="http://files.cargocollective.com/446255/Ip_Willie_Resume-.pdf"> Resumé </a>
+                    <br>
+                    <a style="color:var(--theme-primary)"href="https://files.cargocollective.com/446255/0307_Mini.pdf"> Mini Portfolio </a>
+                    <br>
+                    <a style="color:var(--theme-primary)" href="mailto:ipwillieip@gmail.com?subject=Portfolio Request">Full Portfolio available upon request.</a>
+                </div>
+            </div>
+
+            <div class="previous block">
+                <div class="previous__left left">
+                    Previously at
+                </div>
+                <div class="previous__right right">
+                    <a style="color:var(--theme-primary)" <a href="http://wolffolins.com">Wolff Olins</a>
+                    <br>
+                    <a style="color:var(--theme-primary)" <a href="http://safarisundays.com">Safari Sundays</a>
+                    <br>
+                    <a style="color:var(--theme-primary)" <a href="http://studiolin.org">Studio Lin</a>
+                    <br>
+                    <a style="color:var(--theme-primary)" <a href="http://2x4.org">2×4</a>
+                    <br>
+                    <a style="color:var(--theme-primary)" <a href="http://karlssonwilker.com">karlssonwilker inc.</a>
+                    <br>
+                    <a style="color:var(--theme-primary)" <a href="http://kudos.nyc">Studio Kudos</a>
+                    <br>
+                    <a style="color:var(--theme-primary)" <a href="http://www.bartok.co/">Bartok Group</a>
+                </div>
+            </div>
+
+            <div class="work block">
+                <div class="work__left left">
+                    Work Sample
+                </div>
+
+                <div class="work__right right">
+                    <div class="work__image" style="margin-bottom: 12px;">
+                        <img src="http://files.cargocollective.com/446255/trim-2.gif">
+                    </div>
+                    <div class="work__image">
+                        <img src="http://files.cargocollective.com/446255/trim-2.gif">
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact block">
+                <div class="contact__left left">
+                    Contact
+                </div>
+
+                <div class="contact__right right">
+                    <a style="color:var(--theme-primary)" href="mailto:ipwillieip@gmail.com">ipwillieip@gmail.com</a>
+                    <br>
+                    <a style="color:var(--theme-primary)" href="tel:7189027352"> 718-902-7352</a>
+                    <br>
+                    <a style="color:var(--theme-primary)" href="https://instagram.com/will.ip">Instagram </a>
+                    <br>
+                    <a style="color:var(--theme-primary)" href="https://www.are.na/willie-ip"> Are.na</a>
+                    <br>
+                    <a style="color:var(--theme-primary)" href="https://www.linkedin.com/in/willie-ip-19883aa8"> LinkedIn</a>
+
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="http://fast.fonts.net/jsapi/29d744d6-c6ed-4cca-95bb-23948620d00d.js"></script>
+        <script>
+      const currentHour = (new Date()).getHours();
+
+      const nightTheme = () => {
+        document.body.style.setProperty('--theme-primary', '#ffffff');
+        document.body.style.setProperty('--theme-secondary', '#000000');
+      }
+
+      const dayTheme = () => {
+        document.body.style.setProperty('--theme-primary', '#000000');
+        document.body.style.setProperty('--theme-secondary', '#ffffff');
+      }
+
+      (currentHour > 0 && currentHour < 6) || (currentHour > 18 && currentHour < 24) ? nightTheme() : dayTheme();
+    </script>
+    </body>
+</html>
+​
