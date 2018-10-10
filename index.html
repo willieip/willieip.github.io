@@ -1,11 +1,10 @@
-<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Willie site</title>
+        <title>Willie Ip</title>
         <link rel="stylesheet" media="screen" href="sss.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script src="sss.js"></script>
         <script>
           jQuery(function($){
@@ -14,10 +13,26 @@
             });
           });
         </script>
+        <script>
+            function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML =
+            h + ":" + m + ":" + s;
+            var t = setTimeout(startTime, 500);
+                }
+            function checkTime(i) {
+            if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+            return i;
+           }
+</script>
     </head>
     <body>
-
-    <style>
+   <style>
         body {
         --theme-primary: #000000;
         --theme-secondary: #ffffff;
@@ -66,8 +81,9 @@
         .current,
         .previous,
         .work,
-        .contact {
-            padding: 20px 0;
+        .contact,
+        .misc {
+            padding: 30px 0;
         }
         @media only screen  and (min-width : 1024px) {
             .container {
@@ -78,7 +94,8 @@
             .current,
             .previous,
             .work,
-            .contact {
+            .contact
+            .misc {
                 padding: 30px 0;
             }
             .work__image {
@@ -187,9 +204,16 @@
 
                 </div>
             </div>
+                <div class="misc">
+              <div class="misc_left left" style="margin-bottom: 12px;">
+                  <div id="txt"></div>
+        </div>
+            <body onload="startTime()">
+
+
 
         </div>
-        <script type="text/javascript" src="http://fast.fonts.net/jsapi/29d744d6-c6ed-4cca-95bb-23948620d00d.js"></script>
+         <script type="text/javascript" src="http://fast.fonts.net/jsapi/29d744d6-c6ed-4cca-95bb-23948620d00d.js"></script>
         <script>
       const currentHour = (new Date()).getHours();
       const nightTheme = () => {
@@ -204,3 +228,4 @@
     </script>
     </body>
 </html>
+​
