@@ -1,3 +1,20 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Marketplace
+Explore
+ @willieip
+Sign out
+0
+0 0 willieip/willieip.github.io
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights  Settings
+willieip.github.io/index.html
+c1961ab  just now
+@willieip willieip Update index.html
+
+185 lines (158 sloc)  6.41 KB
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,77 +25,66 @@
     <body>
 
     <style>
-
           body {
         --theme-primary: #000000;
         --theme-secondary: #ffffff;
-
         background: var(--theme-secondary);
         color: var(--theme-primary);
         }
-
         .container {
             margin: 30px;
             font-family: 'Neue Haas Unica W01 Regular', Helvetica, sans-serif;
             font-size: 18px;
             line-height: 24px;
         }
+           a {
+             text-decoration: none;
+        }
 
         .left {
             width: 50%;
             float: left;
         }
-
         .right {
             width: 50%;
             float: right;
-
         }
-
         .block {
             border-bottom: 1px solid var(--theme-primary);
             display: inline-block;
             width: 100%;
         }
-
         .work__image {
             height: 100px;
             width: auto;
             margin-left: 3px;
         }
-
         .work__image img {
             height: 100%;
-
         }
-
         .current,
         .previous,
         .work,
         .contact {
             padding: 20px 0;
         }
-
         @media only screen  and (min-width : 1024px) {
             .container {
                 margin: 50px;
                 font-size: 36px;
                 line-height: 48px;
             }
-
             .current,
             .previous,
             .work,
             .contact {
                 padding: 30px 0;
             }
-
             .work__image {
                 width: auto;
                 height: 325px;
             }
         }
-
     </style>
         <div class="container">
             <div class="current block">
@@ -163,19 +169,29 @@
         <script type="text/javascript" src="http://fast.fonts.net/jsapi/29d744d6-c6ed-4cca-95bb-23948620d00d.js"></script>
         <script>
       const currentHour = (new Date()).getHours();
-
       const nightTheme = () => {
         document.body.style.setProperty('--theme-primary', '#ffffff');
         document.body.style.setProperty('--theme-secondary', '#000000');
       }
-
       const dayTheme = () => {
         document.body.style.setProperty('--theme-primary', '#000000');
         document.body.style.setProperty('--theme-secondary', '#ffffff');
       }
-
       (currentHour > 0 && currentHour < 6) || (currentHour > 18 && currentHour < 24) ? nightTheme() : dayTheme();
     </script>
     </body>
 </html>
 ​
+© 2018 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+API
+Training
+Shop
+Blog
+About
+Press h to open a hovercard with more details.
