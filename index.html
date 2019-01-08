@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Skip to content
 This repository
 Search
@@ -16,33 +17,82 @@ c1961ab  just now
 
 185 lines (158 sloc)  6.41 KB
 <!DOCTYPE html>
+=======
+<!-- Developed by Joseph Malari, enhanced by Edwin Morris -->
+>>>>>>> 82a9a520ff6c0c3d61ba928f02479e9982941165
 <html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Willie site</title>
+        <title>Willie Ip</title>
+        <link rel="stylesheet" media="screen" href="sss.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="sss.js"></script>
+        <script>
+          jQuery(function($){
+            $('.slider').sss({
+              slideShow: false
+            });
+          });
+        </script>
+        <script>
+            function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML =
+            h + ":" + m + ":" + s;
+            var t = setTimeout(startTime, 500);
+                }
+            function checkTime(i) {
+            if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+            return i;
+           }
+</script>
     </head>
     <body>
+<<<<<<< HEAD
 
     <style>
           body {
+=======
+   <style>
+        body {
+>>>>>>> 82a9a520ff6c0c3d61ba928f02479e9982941165
         --theme-primary: #000000;
         --theme-secondary: #ffffff;
         background: var(--theme-secondary);
         color: var(--theme-primary);
         }
+<<<<<<< HEAD
+=======
+
+        .slider {
+          position: relative;
+        }
+
+        .sssprev { cursor: w-resize; }
+        .sssnext { cursor: e-resize; }
+
+>>>>>>> 82a9a520ff6c0c3d61ba928f02479e9982941165
         .container {
             margin: 30px;
             font-family: 'Neue Haas Unica W01 Regular', Helvetica, sans-serif;
-            font-size: 18px;
-            line-height: 24px;
+            font-size: 0.8em;
+            line-height: 1.3em;
+        }
+           a {
+             text-decoration: none;
         }
            a {
              text-decoration: none;
         }
 
         .left {
-            width: 50%;
+            width: 40%;
             float: left;
         }
         .right {
@@ -57,27 +107,32 @@ c1961ab  just now
         .work__image {
             height: 100px;
             width: auto;
-            margin-left: 3px;
         }
         .work__image img {
             height: 100%;
+<<<<<<< HEAD
+=======
+            max-width: 100%;
+>>>>>>> 82a9a520ff6c0c3d61ba928f02479e9982941165
         }
         .current,
         .previous,
         .work,
-        .contact {
-            padding: 20px 0;
+        .contact,
+        .misc {
+            padding: 30px 0;
         }
         @media only screen  and (min-width : 1024px) {
             .container {
                 margin: 50px;
-                font-size: 36px;
-                line-height: 48px;
+                font-size: 1.8em;
+                line-height: 1.25em;
             }
             .current,
             .previous,
             .work,
-            .contact {
+            .contact
+            .misc {
                 padding: 30px 0;
             }
             .work__image {
@@ -92,18 +147,15 @@ c1961ab  just now
                     Willie Ip
                 </div>
                 <div class="current__right right">
-                    Is a graphic designer, based in New York. He received his BFA
-                    in Graphic Design from
+                    Is a graphic designer, based in New York. He is currently designing things at <a style="color:var(--theme-primary)" href="https://www.genius.com/"> Genius </a>. He received his BFA in Graphic Design from
                     <a style="color:var(--theme-primary)" href="http://www.purchase.design/"> Purchase College, School of Art and Design </a>
                     <br>
                     <br>
-                    <MARQUEE behavior="scroll" direction="left" width="75%" scrollamount="15">Currently available for collaboration </MARQUEE>
-                    <br>
-                    <MARQUEE behavior="scroll" direction="right" width="75%" scrollamount="15">Currently designing things at <a style="color:var(--theme-primary)" <a href="http://wwww.genius.com"> Genius </a> </MARQUEE>
+                    <MARQUEE behavior="scroll" direction="left" width="75%" scrollamount="15"> Available for collaboration </MARQUEE>
                     <br>
                     <br>
 
-                    <a style="color:var(--theme-primary)" href="http://files.cargocollective.com/446255/Ip_Willie_Resume-.pdf"> Resumé </a>
+                    <a style="color:var(--theme-primary)" href="https://files.cargocollective.com/446255/Ip_Willie_Resume-.pdf"> Resumé </a>
                     <br>
                     <a style="color:var(--theme-primary)"href="https://files.cargocollective.com/446255/0307_Mini.pdf"> Mini Portfolio </a>
                     <br>
@@ -116,46 +168,117 @@ c1961ab  just now
                     Previously at
                 </div>
                 <div class="previous__right right">
-                    <a style="color:var(--theme-primary)" <a href="http://wolffolins.com">Wolff Olins</a>
+                    <a style="color:var(--theme-primary)" <a href="https://wolffolins.com">Wolff Olins</a>
                     <br>
-                    <a style="color:var(--theme-primary)" <a href="http://safarisundays.com">Safari Sundays</a>
+                    <a style="color:var(--theme-primary)" <a href="https://safarisundays.com">Safari Sundays</a>
                     <br>
-                    <a style="color:var(--theme-primary)" <a href="http://studiolin.org">Studio Lin</a>
+                    <a style="color:var(--theme-primary)" <a href="https://studiolin.org">Studio Lin</a>
                     <br>
-                    <a style="color:var(--theme-primary)" <a href="http://2x4.org">2×4</a>
+                    <a style="color:var(--theme-primary)" <a href="https://2x4.org">2×4</a>
                     <br>
-                    <a style="color:var(--theme-primary)" <a href="http://karlssonwilker.com">karlssonwilker inc.</a>
+                    <a style="color:var(--theme-primary)" <a href="https://karlssonwilker.com">karlssonwilker inc.</a>
                     <br>
-                    <a style="color:var(--theme-primary)" <a href="http://kudos.nyc">Studio Kudos</a>
+                    <a style="color:var(--theme-primary)" <a href="https://kudos.nyc">Studio Kudos</a>
                     <br>
-                    <a style="color:var(--theme-primary)" <a href="http://www.bartok.co/">Bartok Group</a>
+                    <a style="color:var(--theme-primary)" <a href="https://www.bartok.co/">Bartok Group</a>
                 </div>
             </div>
 
             <div class="work block">
                 <div class="work__left left">
-                    Work Sample
+                    another gallery
+                    <br>
+                    Year: 2018
+                    <br>
+                    Identity for a gallery in Lower East Side. 
+                    <br>
+                    With <a style="color:var(--theme-primary)" <a href="http://www.jefferyjones.us/">Jeffery Jones</a>
                 </div>
-
-                <div class="work__right right">
-                    <div class="work__image" style="margin-bottom: 12px;">
-                        <img src="http://files.cargocollective.com/446255/trim-2.gif">
-                    </div>
-                    <div class="work__image">
-                        <img src="http://files.cargocollective.com/446255/trim-2.gif">
-                    </div>
+                
+                <div class="slider right">
+                  <img src="assets/Willie_Ip_anothergallery.jpg" alt="Willie Ip"></img>
+                  <img src="assets/Willie_Ip_anothergallery2.jpg" alt="Willie Ip">
+                  <img src="assets/Willie_Ip_anothergallery3.jpg" alt="Willie Ip">
+                  <img src="assets/Willie_Ip_anothergallery4.jpg" alt="Willie Ip">
+                  <img src="assets/Willie_Ip_anothergallery5.jpg" alt="Willie Ip">
                 </div>
             </div>
+
+            <div class="work block">
+                <div class="work__left left">
+                    Prickly Pear
+                    <br>
+                    Year: 2018
+                    <br>
+                    Process: Fontlab
+                    <br>
+                    Produced at Typography Summer School, New York
+                </div>
+
+                <div class="slider right">
+                  <img src="assets/Willie_Ip_Prickly_Pear.jpg" alt="Willie Ip"></img>
+                  <img src="assets/Willie_Ip_Prickly_Pear2.jpg" alt="Willie Ip">
+                  <img src="assets/Willie_Ip_Prickly_Pear3.jpg" alt="Willie Ip">
+                  <img src="assets/Willie_Ip_Prickly_Pear5.jpg" alt="Willie Ip">
+                  <img src="assets/Willie_Ip_Prickly_Pear6.jpg" alt="Willie Ip">
+                  <img src="assets/Willie_Ip_Prickly_Pear7.jpg" alt="Willie Ip">
+                </div>
+            </div>
+
+            <div class="work block">
+                <div class="work__left left">
+                    Genius Editorial Illustrations
+                    <br>
+                    Year: 2017–Present
+                    <br>
+                    Produced for <a style="color:var(--theme-primary)" <a href="https://genius.com">Genius</a>
+                </div>
+
+                <div class="slider right">
+                  <img src="assets/Willie_IP_MIL_NOV.gif" alt="Willie Ip"> </img> 
+                  <img src="assets/Willie_Ip_MIL_AUG8.gif" alt="Willie Ip">
+                  <img src="assets/Willie_Ip_MIL_MAR3.gif" alt="Willie Ip">
+                  <img src="assets/Willie_Ip_MIL_SEPT9.gif" alt="Willie Ip">
+                  <img src="assets/Willie_Ip_Genius_Editorial.gif" alt="Willie Ip">
+                  <img src="assets/Willie_Ip_MIL_FEB2.gif" alt="Willie Ip">
+                </div>
+            </div>
+
+            <div class="work block">
+                <div class="work__left left" style="margin-bottom: 12px;">
+                    Mavis Staples Accompanied Print
+                    <br>
+                    Year: December 2018
+                    <br>
+                    Produced for <a style="color:var(--theme-primary)" <a href="https://www.vinylmeplease.com/">Vinyl Me Please.</a>  
+                </div>
+                <div class="slider right">
+                  <img src="assets/Willie_IP_VMP_Print.jpg" alt="Willie Ip"></img> 
+                </div>
+             </div>
+
+          <div class="work block">
+                <div class="work__left left">
+                    Movie Night Night
+                    <br>
+                    Year: 2015–2016
+                    <br>
+                    With Megan Bowker
+                </div>
+                <div class="work__right right">
+                    <div class="work__image" style="margin-bottom: 12px;">
+                        <img src="https://d2w9rnfcy7mm78.cloudfront.net/1705921/original_6c9d5e4bade8cd5b42fa320a46edbda6.png?1517878926">
+                    </div>
+              </div>
+</div>  
+              
 
             <div class="contact block">
                 <div class="contact__left left">
                     Contact
                 </div>
-
                 <div class="contact__right right">
                     <a style="color:var(--theme-primary)" href="mailto:ipwillieip@gmail.com">ipwillieip@gmail.com</a>
-                    <br>
-                    <a style="color:var(--theme-primary)" href="tel:7189027352"> 718-902-7352</a>
                     <br>
                     <a style="color:var(--theme-primary)" href="https://instagram.com/will.ip">Instagram </a>
                     <br>
@@ -165,8 +288,16 @@ c1961ab  just now
 
                 </div>
             </div>
+                <div class="misc">
+              <div class="misc_left left" style="margin-bottom: 12px;">
+                  <div id="txt"></div>
         </div>
-        <script type="text/javascript" src="http://fast.fonts.net/jsapi/29d744d6-c6ed-4cca-95bb-23948620d00d.js"></script>
+            <body onload="startTime()">
+
+
+
+        </div>
+         <script type="text/javascript" src="https://fast.fonts.net/jsapi/29d744d6-c6ed-4cca-95bb-23948620d00d.js"></script>
         <script>
       const currentHour = (new Date()).getHours();
       const nightTheme = () => {
