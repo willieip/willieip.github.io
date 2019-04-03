@@ -20,7 +20,7 @@
       .sssnext { cursor: e-resize; }
 
       .container {
-        margin: 30px;
+        margin: 15px;
         font-family: 'Neue Haas Unica W01 Regular', Helvetica, sans-serif;
         font-size: 0.8em;
         line-height: 1.3em;
@@ -267,6 +267,11 @@
         slideShow: false
       });
 
+      function checkTime(i) {
+        if (i < 10) {i = "0" + i};
+        return i;
+      }
+
       function startTime() {
         var today = new Date();
         var h = today.getHours();
@@ -276,11 +281,6 @@
         s = checkTime(s);
         document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
         var t = setTimeout(startTime, 500);
-      }
-
-      function checkTime(i) {
-        if (i < 10) {i = "0" + i};
-        return i;
       }
 
       const currentHour = (new Date()).getHours();
