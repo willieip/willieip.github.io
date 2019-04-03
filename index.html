@@ -282,6 +282,8 @@
         document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
         var t = setTimeout(startTime, 500);
       }
+      
+      startTime();
 
       const currentHour = (new Date()).getHours();
       const nightTheme = () => {
