@@ -7,6 +7,11 @@
 	overflow: hidden;
 }
 
+/* turned off animation here */
+.sss img {
+	opacity: 1 !important;	
+}
+
 .ssslide {
 	width: 100%;
 	margin: 0;
