@@ -54,9 +54,9 @@
 }
 
 .sssprev:hover {
-  cursor: url(assets/image.svg), auto;
+  cursor: url(assets/willarrowleft.svg), auto;
 }
 
 .sssnext:hover {
-  cursor: e-resize;
+  cursor: url(assets/willarrowright.svg), auto;
 }
