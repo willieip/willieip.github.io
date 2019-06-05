@@ -1,52 +1,57 @@
 .sss {
-	height: 0;
-	margin: 0;
-	padding: 0;
-	position: relative;
-	display: block;
-	overflow: hidden;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.sss img {
+  opacity: 1 !important;
 }
 
 .ssslide {
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	position: absolute;
-	top: 0;
-	left: 0;
-	display: none;
-	overflow: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  overflow: hidden;
 }
 
 .ssslide img {
-    max-width: 100%;
-		margin: 0;
-		padding: 0;
-		position: relative;
-		display: block;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: block;
 }
 
-.sssnext, .sssprev {
-	width: 50%	;
-	height: 100%;
-	margin: 0;
-	position: absolute;
-	top: 0;
+.sssnext,
+.sssprev {
+  width: 50%;
+  height: 100%;
+  margin: 0;
+  position: absolute;
+  top: 0;
 }
 
 .sssprev {
-	left: 0%;
+  left: 0%;
 }
 
 .sssnext {
-	right: 0%;
-	height: 100%;
+  right: 0%;
+  height: 100%;
 }
 
-.sssprev:hover, {
-  cursor: w-resize
+.sssprev:hover {
+  cursor: url(assets/image.svg), auto;
 }
 
 .sssnext:hover {
-  cursor: e-resize
+  cursor: e-resize;
 }
