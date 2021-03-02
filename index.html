@@ -52,6 +52,18 @@
         width: 100%;
       }
 
+      .noblock {
+        border-bottom: none;
+        padding-bottom: 0 !important;
+      }
+
+      .noblock .sssprev, .noblock .sssnext {
+        display: none;
+      }
+      .noblock + .block {
+        padding-top: 0
+      }
+
       .work .slider {
         padding-top: 10px;
         width: 100%;
@@ -171,7 +183,7 @@
       </div>
     </div>
       
-      <div class="work block">
+      <div class="work block noblock">
         <div class="work__left left text">
           What do you think/do at 4:20pm?
           <br>
@@ -186,6 +198,15 @@
         <img src="assets/Willie_Ip_Sundae_School.jpg" />   
       </div>
     </div>
+
+    <div class="work block">
+      <div class="work__left left text">
+      </div>
+
+    <div class="slider right">
+      <img src="assets/Willie_Ip_Sundae_School.jpg" />   
+    </div>
+  </div>
 
       <div class="work block">
         <div class="work__left left text">
