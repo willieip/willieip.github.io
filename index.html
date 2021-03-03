@@ -1,84 +1,125 @@
 <!doctype html>
 <html>
-  <head>
-      <title>Willie Ip</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Willie Ip</title>
-    <meta name="description" content="Willie Ip is a designer from New York City, he is currently in home.">
-    <script type="text/javascript" src="https://fast.fonts.net/jsapi/29d744d6-c6ed-4cca-95bb-23948620d00d.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-    <script src="sss.js"></script>
-    <link rel="stylesheet" media="screen" href="sss.css">
-    <style>
-      body {
-        --theme-primary: #000000;
-        --theme-secondary: #ffffff;
-        background: var(--theme-secondary);
-        color: var(--theme-primary);
-      }
 
-      .slider { position: relative; }
-      .sssprev { cursor: w-resize; }
-      .sssnext { cursor: e-resize; }
+<head>
+  <title>Willie Ip</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Willie Ip</title>
+  <meta name="description" content="Willie Ip is a designer from New York City, he is currently in home.">
+  <script type="text/javascript" src="https://fast.fonts.net/jsapi/29d744d6-c6ed-4cca-95bb-23948620d00d.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="sss.js"></script>
+  <link rel="stylesheet" media="screen" href="sss.css">
 
-      .container {
-        margin: 15px;
-        font-family: 'Neue Haas Unica W01 Regular', Helvetica, sans-serif;
+  // sup loser
+  <style>
+    body {
+      --theme-primary: #000000;
+      --theme-secondary: #ffffff;
+      background: var(--theme-secondary);
+      color: var(--theme-primary);
+    }
+
+    .slider {
+      position: relative;
+    }
+
+    .sssprev {
+      cursor: w-resize;
+    }
+
+    .sssnext {
+      cursor: e-resize;
+    }
+
+    .container {
+      margin: 15px;
+      font-family: 'Neue Haas Unica W01 Regular', Helvetica, sans-serif;
+      font-size: 0.70em;
+      line-height: 1.3em;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--theme-primary);
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .left {
+      width: 40%;
+      float: left;
+    }
+
+    .right {
+      width: 50%;
+      float: right;
+    }
+
+    .block {
+      border-bottom: 1px solid var(--theme-primary);
+      display: inline-block;
+      width: 100%;
+    }
+
+    .noblock {
+      border-bottom: none;
+      padding-bottom: 0 !important;
+    }
+
+    .noblock .sssprev,
+    .noblock .sssnext {
+      display: none;
+    }
+
+    .noblock + .block {
+      padding-top: 0
+    }
+
+    .work .slider {
+      padding-top: 10px;
+      width: 100%;
+      display: block;
+    }
+
+    .work__image {
+      height: 100px;
+      width: auto;
+    }
+
+    .work__image img {
+      height: 100%;
+      max-width: 100%;
+    }
+
+    .current,
+    .previous,
+    .work,
+    .contact,
+    .misc {
+      padding: 15px 0;
+    }
+
+    .text {
+      font-size: 0.95em;
+      line-height: 1.3em;
+      width: 100%;
+    }
+
+    @media only screen and (min-width : 1024px) {
+      .text {
         font-size: 0.70em;
         line-height: 1.3em;
-      }
-
-      a {
-        text-decoration: none;
-        color: var(--theme-primary);
-      }
-
-      img { max-width: 100%; }
-
-      .left {
-        width: 40%;
-        float: left;
-      }
-
-      .right {
         width: 50%;
-        float: right;
       }
 
-      .block {
-        border-bottom: 1px solid var(--theme-primary);
-        display: inline-block;
-        width: 100%;
-      }
-
-      .noblock {
-        border-bottom: none;
-        padding-bottom: 0 !important;
-      }
-
-      .noblock .sssprev, .noblock .sssnext {
-        display: none;
-      }
-
-      .noblock + .block {
-        padding-top: 0
-      }
-
-      .work .slider {
-        padding-top: 10px;
-        width: 100%;
-        display: block;
-      }
-
-      .work__image {
-        height: 100px;
-        width: auto;
-      }
-
-      .work__image img {
-        height: 100%;
-        max-width: 100%;
+      .container {
+        margin: 30px;
+        font-size: 1.4em;
+        line-height: 1.25em;
       }
 
       .current,
@@ -86,179 +127,151 @@
       .work,
       .contact,
       .misc {
-        padding: 15px 0;
+        padding: 30px 0;
       }
 
-      .text {
-        font-size: 0.95em;
-        line-height: 1.3em;
-        width: 100%;
+      .work__image {
+        width: auto;
+        height: 325px;
       }
 
-      @media only screen and (min-width : 1024px) {
-        .text {
-          font-size: 0.70em;
-          line-height: 1.3em;
-          width: 50%;
-        }
-
-        .container {
-          margin: 30px;
-          font-size: 1.4em;
-          line-height: 1.25em;
-        }
-
-        .current,
-        .previous,
-        .work,
-        .contact,
-        .misc {
-          padding: 30px 0;
-        }
-
-        .work__image {
-          width: auto;
-          height: 325px;
-        }
-
-        .work .slider {
-          width: 50%;
-          display: inline-block;
-          padding: 0;
-        }
+      .work .slider {
+        width: 50%;
+        display: inline-block;
+        padding: 0;
       }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="current block">
-        <div class="current__left left">Willie Ip</div>
-        <div class="current__right right">
-          A designer from New York City, he is currently freelancing in at home and teaching at School of Visual Arts. 
-          <br>
-          He received his BFA in Graphic Design from Purchase College, School of Art and Design.
-          <br>
-          <br>
-          <MARQUEE behavior="scroll" direction="left" width="75%" scrollamount="15">Available for collaboration</MARQUEE>
-          <br>
-          <br>
-          <a href="https://www.dropbox.com/s/z4jhgmu1no3s3tg/Ip_Willie_Resum%C3%A9.pdf?dl=0">Resumé</a>
-          <br>
-        </div>
-      </div>
+    }
+  </style>
+</head>
 
-      <div class="previous block">
-        <div class="previous__left left">Previously at</div>
-        <div class="previous__right right">
-          <a href="https://music.apple.com/">Music</a>
-          <br>
-          <a href="https://www.new.company/">The New Company</a>
-          <br>
-          <a href="https://www.apple.com/"></a>
-          <br>
-          <a href="https://genius.com">Genius</a>
-          <br>
-          <a href="https://wolffolins.com">Wolff Olins</a>
-          <br>
-          <a href="https://safarisundays.com">Safari Sundays</a>
-          <br>
-          <a href="https://studiolin.org">Studio Lin</a>
-          <br>
-          <a href="https://2x4.org">2×4</a>
-          <br>
-          <a href="https://karlssonwilker.com">karlssonwilker inc.</a>
-          <br>
-          <a href="https://kudos.nyc">Studio Kudos</a>
-          <br>
-          <a href="https://www.bartok.co/">Bartok Group</a>
-        </div>
-      </div>
-         
-      <div class="work block">
-        <div class="work__left left text">
-          Apple
-          <br>
-          Year: 2019 – Present
-          <br>
-          Upon Request Only
-        </div>
-
-      <div class="slider right">
-        <img src="assets/Willie_Ip_Apple.png" />   
+<body>
+  <div class="container">
+    <div class="current block">
+      <div class="current__left left">Willie Ip</div>
+      <div class="current__right right">
+        A designer from New York City, he is currently freelancing in at home and teaching at School of Visual Arts.
+        <br>
+        He received his BFA in Graphic Design from Purchase College, School of Art and Design.
+        <br>
+        <br>
+        <MARQUEE behavior="scroll" direction="left" width="75%" scrollamount="15">Available for collaboration</MARQUEE>
+        <br>
+        <br>
+        <a href="https://www.dropbox.com/s/z4jhgmu1no3s3tg/Ip_Willie_Resum%C3%A9.pdf?dl=0">Resumé</a>
+        <br>
       </div>
     </div>
-      
+
+    <div class="previous block">
+      <div class="previous__left left">Previously at</div>
+      <div class="previous__right right">
+        <a href="https://music.apple.com/">Music</a>
+        <br>
+        <a href="https://www.new.company/">The New Company</a>
+        <br>
+        <a href="https://www.apple.com/"></a>
+        <br>
+        <a href="https://genius.com">Genius</a>
+        <br>
+        <a href="https://wolffolins.com">Wolff Olins</a>
+        <br>
+        <a href="https://safarisundays.com">Safari Sundays</a>
+        <br>
+        <a href="https://studiolin.org">Studio Lin</a>
+        <br>
+        <a href="https://2x4.org">2×4</a>
+        <br>
+        <a href="https://karlssonwilker.com">karlssonwilker inc.</a>
+        <br>
+        <a href="https://kudos.nyc">Studio Kudos</a>
+        <br>
+        <a href="https://www.bartok.co/">Bartok Group</a>
+      </div>
+    </div>
+
+    <div class="work block">
+      <div class="work__left left text">
+        Apple
+        <br>
+        Year: 2019 – Present
+        <br>
+        Upon Request Only
+      </div>
+
+      <div class="slider right">
+        <img src="assets/Willie_Ip_Apple.png" />
+      </div>
+    </div>
+
+    <div class="work block">
+      <div class="work__left left text">
+        What do you think/do at 4:20pm?
+        <br>
+        Year: 2019
+        <br>
+        24" × 36" • CMYK
+        <br>
+        For Sundae School Open Studio
+      </div>
+
+      <div class="slider right">
+        <img src="assets/Willie_Ip_Sundae_School.jpg" />
+      </div>
+    </div>
+
+    <div class="work block noblock">
+      <div class="work__left left text">
+        Amazing Magazine
+        <br>
+        Year: 2019
+        <br>
+        Nameplate
+      </div>
+
+      <div class="slider right">
+        <img src="assets/Willie_Ip_Amazing_Magazine0.png" loading="lazy" />
+      </div>
+    </div>
+
+    <div class="work block">
+      <div class="work__left left text">
+        Amazing Magazine Nº9
+        <br>
+        Year: 2019
+        <br>
+        9" × 11" • CMYK
+        <br>
+        Designed with <a href="http://bleach.design/">Peter Fowler</a>
+      </div>
+
+      <div class="slider right">
+        <img src="assets/Willie_Ip_Amazing_Magazine6.jpg" loading="lazy" />
+        <img src="assets/Willie_Ip_Amazing_Magazine7.jpg" loading="lazy" />
+        <img src="assets/Willie_Ip_Amazing_Magazine8.jpg" loading="lazy" />
+        <img src="assets/Willie_Ip_Amazing_Magazine9.jpg" loading="lazy" />
+        <img src="assets/Willie_Ip_Amazing_Magazine10.jpg" loading="lazy" />
+        <img src="assets/Willie_Ip_Amazing_Magazine11.jpg" loading="lazy" />
+        <img src="assets/Willie_Ip_Amazing_Magazine12.jpg" loading="lazy" />
+      </div>
       <div class="work block">
         <div class="work__left left text">
-          What do you think/do at 4:20pm?
+          Amazing Magazine Nº8
           <br>
           Year: 2019
           <br>
-          24" × 36" • CMYK
-          <br>
-          For Sundae School Open Studio
+          9" × 11" • CMYK
         </div>
 
-      <div class="slider right">
-        <img src="assets/Willie_Ip_Sundae_School.jpg" />   
+        <div class="slider right">
+          <video autoplay playsinline muted loop src="assets/Willie_Ip_Amazing_Magazine.mp4"></video>
+          <img src="assets/Willie_Ip_Amazing_Magazine1.jpg" loading="lazy" />
+          <img src="assets/Willie_Ip_Amazing_Magazine2.jpg" loading="lazy" />
+          <img src="assets/Willie_Ip_Amazing_Magazine3.jpg" loading="lazy" />
+          <img src="assets/Willie_Ip_Amazing_Magazine4.jpg" loading="lazy" />
+          <img src="assets/Willie_Ip_Amazing_Magazine5.jpg" loading="lazy" />
+        </div>
+
       </div>
-    </div>
-
-
-
-  <div class="work block noblock">
-    <div class="work__left left text">
-     Amazing Magazine
-     <br>
-      Year: 2019
-      <br>
-     Nameplate
-    </div>
-
-  <div class="slider right">
-    <img src="assets/Willie_Ip_Amazing_Magazine0.png" loading="lazy" />   
-  </div>
-</div>
-
-<div class="work block">
-  <div class="work__left left text">
-    Amazing Magazine Nº9
-    <br>
-    Year: 2019
-    <br>
-    9" × 11" • CMYK
-    <br>
-    Designed with <a href="http://bleach.design/">Peter Fowler</a>
-  </div>
-
-<div class="slider right">
-  <img src="assets/Willie_Ip_Amazing_Magazine6.jpg" loading="lazy" />
-  <img src="assets/Willie_Ip_Amazing_Magazine7.jpg" loading="lazy" />
-  <img src="assets/Willie_Ip_Amazing_Magazine8.jpg" loading="lazy" />   
-  <img src="assets/Willie_Ip_Amazing_Magazine9.jpg" loading="lazy" /> 
-  <img src="assets/Willie_Ip_Amazing_Magazine10.jpg" loading="lazy" />   
-  <img src="assets/Willie_Ip_Amazing_Magazine11.jpg" loading="lazy" />  
-  <img src="assets/Willie_Ip_Amazing_Magazine12.jpg" loading="lazy" />   
-</div>
-<div class="work block">
-  <div class="work__left left text">
-    Amazing Magazine Nº8
-    <br>
-    Year: 2019
-    <br>
-    9" × 11" • CMYK
-  </div>
-
-<div class="slider right">
-  <video autoplay playsinline muted loop src="assets/Willie_Ip_Amazing_Magazine.mp4"></video>   
-  <img src="assets/Willie_Ip_Amazing_Magazine1.jpg" loading="lazy" />
-  <img src="assets/Willie_Ip_Amazing_Magazine2.jpg" loading="lazy" />
-  <img src="assets/Willie_Ip_Amazing_Magazine3.jpg" loading="lazy" />   
-  <img src="assets/Willie_Ip_Amazing_Magazine4.jpg" loading="lazy" />   
-  <img src="assets/Willie_Ip_Amazing_Magazine5.jpg" loading="lazy" />   
-</div>
-
-</div> 
 
       <div class="work block">
         <div class="work__left left text">
@@ -283,9 +296,9 @@
           <video autoplay playsinline muted loop src="assets/Willie Ip_STxG_8.mp4"></video>
           <video autoplay playsinline muted loop src="assets/Willie Ip_STxG_9.mp4"></video>
           <img src="assets/Willie Ip_STxG_10.jpg" />
-          <img src="assets/Willie Ip_STxG_11.jpg" />          
+          <img src="assets/Willie Ip_STxG_11.jpg" />
           <img src="assets/Willie Ip_STxG_12.jpg" />
-          <img src="assets/Willie Ip_STxG_13.jpg" />          
+          <img src="assets/Willie Ip_STxG_13.jpg" />
         </div>
       </div>
 
@@ -307,22 +320,22 @@
           <video autoplay playsinline muted loop src="assets/Willie_Ip_IQBBQ_1.mp4"></video>
           <video autoplay playsinline muted loop src="assets/Willie_Ip_IQBBQ_2.mp4"></video>
           <video autoplay playsinline muted loop src="assets/Willie_Ip_IQBBQ_3.mp4"></video>
-          <video autoplay playsinline muted loop src="assets/Willie_Ip_IQBBQ_4.mp4"></video> 
-          <img src="assets/Willie_Ip_IQBBQ_4.1.jpg"/>
-          <img src="assets/Willie_Ip_IQBBQ_5.jpg"/>
-          <img src="assets/Willie_Ip_IQBBQ_6.jpg"/> 
-          <video autoplay playsinline muted loop src="assets/Willie_Ip_IQBBQ_7.mp4"></video> 
-          <img src="assets/Willie_Ip_IQBBQ_8.jpg"/>
-          <img src="assets/Willie_Ip_IQBBQ_9.jpg"/>
-          <img src="assets/Willie_Ip_IQBBQ_10.jpg"/>
-          <img src="assets/Willie_Ip_IQBBQ_11.jpg"/>
-          <img src="assets/Willie_Ip_IQBBQ_12.jpg"/>
-          <video autoplay playsinline muted loop src="assets/Willie_Ip_IQBBQ_12.mp4"></video> 
-          <img src="assets/Willie_Ip_IQBBQ_13.jpg"/>
-          <img src="assets/Willie_Ip_IQBBQ_14.jpg"/>
+          <video autoplay playsinline muted loop src="assets/Willie_Ip_IQBBQ_4.mp4"></video>
+          <img src="assets/Willie_Ip_IQBBQ_4.1.jpg" />
+          <img src="assets/Willie_Ip_IQBBQ_5.jpg" />
+          <img src="assets/Willie_Ip_IQBBQ_6.jpg" />
+          <video autoplay playsinline muted loop src="assets/Willie_Ip_IQBBQ_7.mp4"></video>
+          <img src="assets/Willie_Ip_IQBBQ_8.jpg" />
+          <img src="assets/Willie_Ip_IQBBQ_9.jpg" />
+          <img src="assets/Willie_Ip_IQBBQ_10.jpg" />
+          <img src="assets/Willie_Ip_IQBBQ_11.jpg" />
+          <img src="assets/Willie_Ip_IQBBQ_12.jpg" />
+          <video autoplay playsinline muted loop src="assets/Willie_Ip_IQBBQ_12.mp4"></video>
+          <img src="assets/Willie_Ip_IQBBQ_13.jpg" />
+          <img src="assets/Willie_Ip_IQBBQ_14.jpg" />
         </div>
       </div>
-      
+
       <div class="work block">
         <div class="work__left left text">
           another gallery
@@ -400,21 +413,21 @@
           <img src="assets/Willie_IP_VMP_Print.jpg" />
         </div>
       </div>
-      
+
       <div class="work block">
         <div class="work__left left text" style="margin-bottom: 12px;">
-          Poster for <a href="https://www.powrplnt.org/">POWRPLNT.</a> 
+          Poster for <a href="https://www.powrplnt.org/">POWRPLNT.</a>
           <br>
           Year: 2018
           <br>
           Set in custom drawn typeface.
         </div>
         <div class="slider right">
-          <img src="assets/Willie_Ip_Powrplnt1.jpg"/>
-          <img src="assets/Willie_Ip_Powrplnt2.jpg"/>
+          <img src="assets/Willie_Ip_Powrplnt1.jpg" />
+          <img src="assets/Willie_Ip_Powrplnt2.jpg" />
         </div>
       </div>
-      
+
       <div class="work block">
         <div class="work__left left text">
           A Situation Constructed from Loose and Overlapping Social and Architectural Aggregates
@@ -427,14 +440,14 @@
           <br>
         </div>
         <div class="slider right">
-          <img src="assets/Willie_Ip_MOS_1.jpg"  />
-          <img src="assets/Willie_Ip_MOS_2.jpg"  />
-          <img src="assets/Willie_Ip_MOS_3.jpg"  />
-          <img src="assets/Willie_Ip_MOS_4.jpg"  />
-          <img src="assets/Willie_Ip_MOS_5.jpg"  />
-          <img src="assets/Willie_Ip_MOS_6.jpg"  />
-          <img src="assets/Willie_Ip_MOS_7.jpg"  />
-          <img src="assets/Willie_Ip_MOS_8.jpg"  />
+          <img src="assets/Willie_Ip_MOS_1.jpg" />
+          <img src="assets/Willie_Ip_MOS_2.jpg" />
+          <img src="assets/Willie_Ip_MOS_3.jpg" />
+          <img src="assets/Willie_Ip_MOS_4.jpg" />
+          <img src="assets/Willie_Ip_MOS_5.jpg" />
+          <img src="assets/Willie_Ip_MOS_6.jpg" />
+          <img src="assets/Willie_Ip_MOS_7.jpg" />
+          <img src="assets/Willie_Ip_MOS_8.jpg" />
         </div>
       </div>
 
@@ -444,16 +457,16 @@
           <br>
           Year: 2016
           <br>
-          Studio: 2 × 4 
+          Studio: 2 × 4
           <br>
           Creative Director: Sung Joong Kim
-         <br>
-          Design Director:  Ryan Weafer
-         <br>
+          <br>
+          Design Director: Ryan Weafer
+          <br>
           Design Team: Willie Ip, JiEun Rim, and Min Choi
         </div>
         <div class="slider right">
-          <img src="assets/Willie_Ip_miu_Miu.jpg"  />
+          <img src="assets/Willie_Ip_miu_Miu.jpg" />
           <img src="assets/Willie_Ip_miu_Miu2.jpg" />
           <img src="assets/Willie_Ip_miu_Miu3.jpg" />
           <img src="assets/Willie_Ip_miu_Miu4.jpg" />
@@ -468,14 +481,14 @@
           <br>
           Year: 2016
           <br>
-          Studio: 2 × 4 
+          Studio: 2 × 4
           <br>
           Creative Director: Sung Joong Kim
-         <br>
+          <br>
           Design Team: Willie Ip, and Matteo Messinese
         </div>
         <div class="slider right">
-          <img src="assets/Willie_Ip_PradaVision.jpg"  />
+          <img src="assets/Willie_Ip_PradaVision.jpg" />
           <img src="assets/Willie_Ip_PradaVision2.jpg" />
           <img src="assets/Willie_Ip_PradaVision3.jpg" />
           <img src="assets/Willie_Ip_PradaVision4.jpg" />
@@ -528,7 +541,7 @@
       $('.slider').sss({
         slideShow: false
       });
-      
+
       function formatAMPM(date) {
         var hours = date.getHours();
         var minutes = date.getMinutes();
@@ -536,9 +549,9 @@
         var ampm = hours >= 12 ? 'pm' : 'am';
         hours = hours % 12;
         hours = hours ? hours : 12; // the hour '0' should be '12'
-        hours = hours < 10 ? '0'+hours : hours;
-        minutes = minutes < 10 ? '0'+minutes : minutes;
-        seconds = seconds < 10 ? '0'+seconds : seconds;
+        hours = hours < 10 ? '0' + hours : hours;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
         var strTime = hours + ':' + minutes + ':' + seconds + ampm;
         return strTime;
       }
@@ -548,7 +561,7 @@
         document.getElementById('txt').innerHTML = formattedToday;
         setTimeout(startTime, 500);
       }
-   
+
       startTime();
 
       const currentHour = (new Date()).getHours();
@@ -562,5 +575,6 @@
       }
       (currentHour > 0 && currentHour < 6) || (currentHour > 18 && currentHour < 24) ? nightTheme() : dayTheme();
     </script>
-  </body>
+</body>
+
 </html>
