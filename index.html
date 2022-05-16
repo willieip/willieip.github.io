@@ -13,136 +13,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
   <script src="sss.js"></script>
   <link rel="stylesheet" media="screen" href="sss.css">
-  
-  <style>
-    body {
-      --theme-primary: #000000;
-      --theme-secondary: #ffffff;
-      background: var(--theme-secondary);
-      color: var(--theme-primary);
-    }
-
-    .slider {
-      position: relative;
-    }
-
-    .sssprev {
-      cursor: w-resize;
-    }
-
-    .sssnext {
-      cursor: e-resize;
-    }
-
-    .container {
-      margin: 15px;
-      font-family: 'Neue Haas Unica W01 Regular', Helvetica, sans-serif;
-      font-size: 0.70em;
-      line-height: 1.3em;
-    }
-
-    a {
-      text-decoration: none;
-      color: var(--theme-primary);
-    }
-
-    img {
-      max-width: 100%;
-    }
-
-    .left {
-      width: 40%;
-      float: left;
-    }
-
-    .right {
-      width: 50%;
-      float: right;
-    }
-
-    .block {
-      border-bottom: 1px solid var(--theme-primary);
-      display: inline-block;
-      width: 100%;
-    }
-
-    .noblock {
-      border-bottom: none;
-      padding-bottom: 0 !important;
-    }
-
-    .noblock .sssprev,
-    .noblock .sssnext {
-      display: none;
-    }
-
-    .noblock + .block {
-      padding-top: 0
-    }
-
-    .work .slider {
-      padding-top: 10px;
-      width: 100%;
-      display: block;
-    }
-
-    .work__image {
-      height: 100px;
-      width: auto;
-    }
-
-    .work__image img {
-      height: 100%;
-      max-width: 100%;
-    }
-
-    .current,
-    .previous,
-    .work,
-    .contact,
-    .misc {
-      padding: 15px 0;
-    }
-
-    .text {
-      font-size: 0.95em;
-      line-height: 1.3em;
-      width: 100%;
-    }
-
-    @media only screen and (min-width : 1024px) {
-      .text {
-        font-size: 0.70em;
-        line-height: 1.3em;
-        width: 50%;
-      }
-
-      .container {
-        margin: 30px;
-        font-size: 1.4em;
-        line-height: 1.25em;
-      }
-
-      .current,
-      .previous,
-      .work,
-      .contact,
-      .misc {
-        padding: 30px 0;
-      }
-
-      .work__image {
-        width: auto;
-        height: 325px;
-      }
-
-      .work .slider {
-        width: 50%;
-        display: inline-block;
-        padding: 0;
-      }
-    }
-  </style>
+  <link rel="stylesheet" media="screen" href="styles.css">
 </head>
 
 <body>
@@ -539,47 +410,13 @@
         <div class="misc_left left" style="margin-bottom: 12px;">
           <div id="txt"></div>
         </div>
+        <div>
+          <a href="landfill.html">Landfill</a>
+        </div>
       </div>
     </div>
 
-    <script>
-      $('.slider').sss({
-        slideShow: false
-      });
-
-      function formatAMPM(date) {
-        var hours = date.getHours();
-        var minutes = date.getMinutes();
-        var seconds = date.getSeconds();
-        var ampm = hours >= 12 ? 'pm' : 'am';
-        hours = hours % 12;
-        hours = hours ? hours : 12; // the hour '0' should be '12'
-        hours = hours < 10 ? '0' + hours : hours;
-        minutes = minutes < 10 ? '0' + minutes : minutes;
-        seconds = seconds < 10 ? '0' + seconds : seconds;
-        var strTime = hours + ':' + minutes + ':' + seconds + ampm;
-        return strTime;
-      }
-
-      function startTime() {
-        var formattedToday = formatAMPM(new Date());
-        document.getElementById('txt').innerHTML = formattedToday;
-        setTimeout(startTime, 500);
-      }
-
-      startTime();
-
-      const currentHour = (new Date()).getHours();
-      const nightTheme = () => {
-        document.body.style.setProperty('--theme-primary', '#ffffff');
-        document.body.style.setProperty('--theme-secondary', '#000000');
-      }
-      const dayTheme = () => {
-        document.body.style.setProperty('--theme-primary', '#000000');
-        document.body.style.setProperty('--theme-secondary', '#ffffff');
-      }
-      (currentHour > 0 && currentHour < 6) || (currentHour > 18 && currentHour < 24) ? nightTheme() : dayTheme();
-    </script>
+    <script src="app.js"></script>
 </body>
 
 </html>
