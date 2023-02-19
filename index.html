@@ -17,7 +17,7 @@
   <style>
     body {
       --theme-primary: #e9e9e9;
-      --theme-secondary: #ffffff;
+      --theme-primary: #000000;
       background: var(--theme-secondary);
       color: var(--theme-primary);
     }
@@ -572,11 +572,11 @@
 
       const currentHour = (new Date()).getHours();
       const nightTheme = () => {
-        document.body.style.setProperty('--theme-primary', '#ffffff');
-        document.body.style.setProperty('--theme-secondary', '#e9e9e9');
+        document.body.style.setProperty('--theme-primary', '#e9e9e9');
+        document.body.style.setProperty('--theme-secondary', '#000000');
       }
       const dayTheme = () => {
-        document.body.style.setProperty('--theme-primary', '#e9e9e9');
+        document.body.style.setProperty('--theme-primary', '#000000');
         document.body.style.setProperty('--theme-secondary', '#ffffff');
       }
       (currentHour > 0 && currentHour < 6) || (currentHour > 18 && currentHour < 24) ? nightTheme() : dayTheme();
