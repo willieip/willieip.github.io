@@ -36,7 +36,9 @@
 
             // Animate Slider
             function get_height(target) {
-                return ((slides.eq(target).height() / slider.width()) * 100) + '%';
+                var height = ((slides.eq(target).height() / slider.width()) * 100) + '%';
+
+                return (height === '0%') ? "132%" : height;
             }
 
             function animate_slide(target) {
