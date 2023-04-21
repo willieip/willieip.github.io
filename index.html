@@ -48,6 +48,7 @@
 
     img {
       max-width: 100%;
+      border-radius: 15px;
     }
 
     .left {
@@ -62,6 +63,12 @@
 
     .block {
       border-bottom: 1px solid var(--theme-primary);
+      display: inline-block;
+      width: 100%;
+    }
+
+    .block2{
+      border-bottom: none;
       display: inline-block;
       width: 100%;
     }
@@ -92,6 +99,7 @@
     }
 
     .work__image img {
+      border-radius: 20px
       height: 100%;
       max-width: 100%;
     }
@@ -222,60 +230,61 @@
         <img src="assets/Willie_Ip_Sundae_School.jpg" />
       </div>
     </div>
+<div class="work block noblock">
+  <div class="work__left left text">
+    Amazing Magazine
+    <br>
+    Year: 2019
+    <br>
+    Nameplate
+  </div>
 
-    <div class="work block noblock">
-      <div class="work__left left text">
-        Amazing Magazine
-        <br>
-        Year: 2019
-        <br>
-        Nameplate
-      </div>
+  <div class="slider right">
+    <img src="assets/Willie_Ip_Amazing_Magazine0.png" loading="lazy" />
+  </div>
+</div>
 
-      <div class="slider right">
-        <img src="assets/Willie_Ip_Amazing_Magazine0.png" loading="lazy" />
-      </div>
-    </div>
+<div class="work block2">
+  <div class="work__left left text">
+    Amazing Magazine Nº9
+    <br>
+    Year: 2019
+    <br>
+    9" × 11" • CMYK
+    <br>
+    Designed with <a href="http://bleach.design/">Peter Fowler</a>
+  </div>
 
-    <div class="work block">
-      <div class="work__left left text">
-        Amazing Magazine Nº9
-        <br>
-        Year: 2019
-        <br>
-        9" × 11" • CMYK
-        <br>
-        Designed with <a href="http://bleach.design/">Peter Fowler</a>
-      </div>
+  <div class="slider right">
+    <img src="assets/Willie_Ip_Amazing_Magazine6.jpg" loading="lazy" />
+    <img src="assets/Willie_Ip_Amazing_Magazine7.jpg" loading="lazy" />
+    <img src="assets/Willie_Ip_Amazing_Magazine8.jpg" loading="lazy" />
+    <img src="assets/Willie_Ip_Amazing_Magazine9.jpg" loading="lazy" />
+    <img src="assets/Willie_Ip_Amazing_Magazine10.jpg" loading="lazy" />
+    <img src="assets/Willie_Ip_Amazing_Magazine11.jpg" loading="lazy" />
+    <img src="assets/Willie_Ip_Amazing_Magazine12.jpg" loading="lazy" />
+  </div>
+</div>
 
-      <div class="slider right">
-        <img src="assets/Willie_Ip_Amazing_Magazine6.jpg" loading="lazy" />
-        <img src="assets/Willie_Ip_Amazing_Magazine7.jpg" loading="lazy" />
-        <img src="assets/Willie_Ip_Amazing_Magazine8.jpg" loading="lazy" />
-        <img src="assets/Willie_Ip_Amazing_Magazine9.jpg" loading="lazy" />
-        <img src="assets/Willie_Ip_Amazing_Magazine10.jpg" loading="lazy" />
-        <img src="assets/Willie_Ip_Amazing_Magazine11.jpg" loading="lazy" />
-        <img src="assets/Willie_Ip_Amazing_Magazine12.jpg" loading="lazy" />
-      </div>
-      <div class="work block">
-        <div class="work__left left text">
-          Amazing Magazine Nº8
-          <br>
-          Year: 2019
-          <br>
-          9" × 11" • CMYK
-        </div>
+<div class="work block">
+  <div class="work__left left text">
+    Amazing Magazine Nº8
+    <br>
+    Year: 2019
+    <br>
+    9" × 11" • CMYK
+  </div>
 
-        <div class="slider right">
-          <video autoplay playsinline muted loop src="assets/Willie_Ip_Amazing_Magazine.mp4"></video>
-          <img src="assets/Willie_Ip_Amazing_Magazine1.jpg" loading="lazy" />
-          <img src="assets/Willie_Ip_Amazing_Magazine2.jpg" loading="lazy" />
-          <img src="assets/Willie_Ip_Amazing_Magazine3.jpg" loading="lazy" />
-          <img src="assets/Willie_Ip_Amazing_Magazine4.jpg" loading="lazy" />
-          <img src="assets/Willie_Ip_Amazing_Magazine5.jpg" loading="lazy" />
-        </div>
+  <div class="slider right">
+    <video autoplay playsinline muted loop src="assets/Willie_Ip_Amazing_Magazine.mp4"></video>
+    <img src="assets/Willie_Ip_Amazing_Magazine1.jpg" loading="lazy" />
+    <img src="assets/Willie_Ip_Amazing_Magazine2.jpg" loading="lazy" />
+    <img src="assets/Willie_Ip_Amazing_Magazine3.jpg" loading="lazy" />
+    <img src="assets/Willie_Ip_Amazing_Magazine4.jpg" loading="lazy" />
+    <img src="assets/Willie_Ip_Amazing_Magazine5.jpg" loading="lazy" />
+  </div>
+</div>
 
-      </div>
       
 
       <div class="work block">
@@ -543,43 +552,53 @@
     </div>
 
     <script>
-      $('.slider').sss({
+      const slider = $('.slider');
+      
+      slider.sss({
         slideShow: false
       });
-
-      function formatAMPM(date) {
-        var hours = date.getHours();
-        var minutes = date.getMinutes();
-        var seconds = date.getSeconds();
-        var ampm = hours >= 12 ? 'pm' : 'am';
+    
+      const formatAMPM = (date) => {
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+        const ampm = hours >= 12 ? 'pm' : 'am';
         hours = hours % 12;
         hours = hours ? hours : 12; // the hour '0' should be '12'
         hours = hours < 10 ? '0' + hours : hours;
         minutes = minutes < 10 ? '0' + minutes : minutes;
         seconds = seconds < 10 ? '0' + seconds : seconds;
-        var strTime = hours + ':' + minutes + ':' + seconds + ampm;
+        const strTime = hours + ':' + minutes + ':' + seconds + ampm;
         return strTime;
-      }
-
-      function startTime() {
-        var formattedToday = formatAMPM(new Date());
+      };
+    
+      const startTime = () => {
+        const formattedToday = formatAMPM(new Date());
         document.getElementById('txt').innerHTML = formattedToday;
         setTimeout(startTime, 500);
-      }
-
+      };
+    
       startTime();
-
-      const currentHour = (new Date()).getHours();
+    
+      const currentHour = new Date().getHours();
+      
       const nightTheme = () => {
         document.body.style.setProperty('--theme-primary', '#e9e9e9');
         document.body.style.setProperty('--theme-secondary', '#000000');
-      }
+      };
+      
       const dayTheme = () => {
         document.body.style.setProperty('--theme-primary', '#000000');
         document.body.style.setProperty('--theme-secondary', '#ffffff');
+      };
+      
+      if ((currentHour > 0 && currentHour < 6) || (currentHour > 18 && currentHour < 24)) {
+        nightTheme();
+      } else {
+        dayTheme();
       }
-      (currentHour > 0 && currentHour < 6) || (currentHour > 18 && currentHour < 24) ? nightTheme() : dayTheme();
     </script>
+    
 </body>
 
 </html>
