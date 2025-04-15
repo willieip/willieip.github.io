@@ -15,8 +15,8 @@
   <!-- -->
   <style>
     body {
-      --theme-primary: #1A1A1A; /* softer black */
-      --theme-secondary: #E9E9E9; /* softer white */
+      --theme-primary: #1a1a1a; /* softer black */
+      --theme-secondary: #f5f5f5; /* softer white */
       background: var(--theme-secondary);
       color: var(--theme-primary);
     }
@@ -773,7 +773,7 @@ a:hover {
     const currentHour = new Date().getHours();
 
     const nightTheme = () => {
-      document.body.style.setProperty('--theme-primary', '#e9e9e9');
+      document.body.style.setProperty('--theme-primary', '#f5f5f5');
       document.body.style.setProperty('--theme-secondary', '#1A1A1A');
     };
 
@@ -840,11 +840,11 @@ a:hover {
     const themeSwitch = document.getElementById('themeSwitch');
     const currentPrimary = getComputedStyle(document.body).getPropertyValue('--theme-primary').trim();
     if (currentPrimary === '#1a1a1a') {
-      document.body.style.setProperty('--theme-primary', '#E9E9E9');
-      document.body.style.setProperty('--theme-secondary', '#1A1A1A');
+      document.body.style.setProperty('--theme-primary', '#e9e9e9');
+      document.body.style.setProperty('--theme-secondary', '#1a1a1a');
     } else {
       document.body.style.setProperty('--theme-primary', '#1a1a1a');
-      document.body.style.setProperty('--theme-secondary', '#E9E9E9');
+      document.body.style.setProperty('--theme-secondary', '#e9e9e9');
     }
     themeSwitch.classList.toggle('active');
   }
