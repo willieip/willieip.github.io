@@ -407,17 +407,17 @@
         <br/>
         Year: 2023
         <br/>
-        Creative Director: Cynthia Protomo
-        <br/>
-        Design Lead: Brett Itaya
-        <br/>
-        Icon Designer: Jez Burrows
-        <br/>
-        Animation: Dom Han
-        <br/>
-        Producer: Hannah Kealia May
-        <br/>
-        Product Designer: Tarek Younes + More
+        <span class="toggle-more" onclick="toggleCredits(this)">Project Information +</span>
+        <div class="credits-details" style="display: none;">
+          Team<br>
+          Creative Director: Cynthia Protomo<br/>
+          Design Lead: Brett Itaya<br/>
+          Icon Designer: Jez Burrows<br/>
+          Animation: Dom Han<br/>
+          Producer: Hannah Kealia May<br/>
+          Product Designer: Tarek Younes<br/>
+          <span class="toggle-less" onclick="toggleCredits(this)">Close -</span>
+        </div>
       </div>
 <div class="slider right">
 <img alt="Project image" loading="lazy" src="assets/Willie Ip_Instagram-Threads_1.webp"/>
@@ -601,10 +601,18 @@
         <br/>
         Annual summer concert
         <br/>
-        Design Team: Willie Ip, Tania Lili, and Christina Lu
-        <br/>
-        Animation: <a href="https://violetoffice.com">Violet Office</a>
-<br/>
+        <span class="toggle-more" onclick="toggleCredits(this)">Project Information +</span>
+        <div class="credits-details" style="display: none;">
+          Team<br>
+          Designer: Tania Lili, Deron Millay<br>
+          Animation: Christina Lu<br>
+          Producer: Lila Murphy<br>
+          Support: Violet Office
+          <br>
+          <span class="toggle-less" onclick="toggleCredits(this)">Close -</span>
+        </div>
+
+
 </div>
 <div class="slider right">
 <video autoplay="" loading="lazy" loop="" muted="" playsinline="" src="assets/Willie_Ip_IQBBQ_1.mp4"></video>
@@ -879,5 +887,20 @@
         document.getElementById("lessToggle").style.display = "none";
       }
     }
-    </script></body>
+    
+function toggleCredits(el) {
+  const container = el.closest('.work__left');
+  const details = container.querySelector('.credits-details');
+  const toggleMore = container.querySelector('.toggle-more');
+  const toggleLess = container.querySelector('.toggle-less');
+
+  if (details.style.display === "none") {
+    details.style.display = "block";
+    toggleMore.style.display = "none";
+  } else {
+    details.style.display = "none";
+    toggleMore.style.display = "inline";
+  }
+}
+</script></body>
 </html>
