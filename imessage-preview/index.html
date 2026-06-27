@@ -14,9 +14,9 @@
     <meta property="og:image" content="https://willieip.me/imessage-preview/preview.png">
     <meta property="og:image:secure_url" content="https://willieip.me/imessage-preview/preview.png">
     <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="600">
-    <meta property="og:image:height" content="315">
-    <meta property="og:image:alt" content="A black message bubble with white text that says Hello there">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Black background with large white text that says Hello there">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Hello">
@@ -25,9 +25,9 @@
 
     <style>
       :root {
-        color-scheme: light;
+        color-scheme: dark;
         font-family: Arial, Helvetica, sans-serif;
-        background: #f5f5f7;
+        background: #000000;
         color: #ffffff;
       }
 
@@ -46,16 +46,13 @@
         min-height: 100vh;
         place-items: center;
         padding: 32px;
-        background: #f5f5f7;
+        background: #000000;
       }
 
-      .bubble {
-        width: min(900px, 100%);
-        border-radius: 56px;
-        background: #000000;
-        padding: clamp(42px, 9vw, 92px) clamp(34px, 8vw, 88px);
+      .message {
+        width: min(1000px, 100%);
         color: #ffffff;
-        font-size: clamp(56px, 11vw, 132px);
+        font-size: clamp(64px, 14vw, 172px);
         font-weight: 700;
         letter-spacing: 0;
         line-height: 0.96;
@@ -64,6 +61,6 @@
     </style>
   </head>
   <body>
-    <main class="bubble" aria-label="Hello there">Hello there</main>
+    <main class="message" aria-label="Hello there">Hello there</main>
   </body>
 </html>
