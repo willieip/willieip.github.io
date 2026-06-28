@@ -18,8 +18,8 @@
     <meta property="og:description" content="A quick reference for when reservations typically open.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://willieip.me/imessage-preview/">
-    <meta property="og:image" content="https://willieip.me/imessage-preview/preview-v7.png">
-    <meta property="og:image:secure_url" content="https://willieip.me/imessage-preview/preview-v7.png">
+    <meta property="og:image" content="https://willieip.me/imessage-preview/preview-v8.png">
+    <meta property="og:image:secure_url" content="https://willieip.me/imessage-preview/preview-v8.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1139">
     <meta property="og:image:height" content="630">
@@ -28,7 +28,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Restaurant Drop Times">
     <meta name="twitter:description" content="A quick reference for when reservations typically open.">
-    <meta name="twitter:image" content="https://willieip.me/imessage-preview/preview-v7.png">
+    <meta name="twitter:image" content="https://willieip.me/imessage-preview/preview-v8.png">
     <meta name="twitter:url" content="https://willieip.me/imessage-preview/">
 
     <style>
@@ -55,47 +55,30 @@
         background: #1D1D1D;
       }
 
+      .frame-preview {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: left top;
+      }
+
       .content {
         position: absolute;
-        top: clamp(48px, 12.58vw, 79.27px);
-        left: clamp(32px, 5.49vw, 62.58px);
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: clamp(12px, 1.47vw, 16.689px);
-        width: min(calc(100vw - 125.16px), 972.114px);
-        text-align: left;
-      }
-
-      h1 {
-        margin: 0;
-        color: #ffffff;
-        font-family: Helvetica, Arial, sans-serif;
-        font-size: clamp(56px, 8.79vw, 100.132px);
-        font-weight: 400;
-        letter-spacing: 0;
-        line-height: 1.01;
-        opacity: 0.9;
-      }
-
-      h1 span {
-        display: block;
-      }
-
-      p {
-        margin: 0;
-        max-width: none;
-        color: rgba(255, 255, 255, 0.76);
-        font-family: Helvetica, Arial, sans-serif;
-        font-size: clamp(25px, 4.03vw, 45.894px);
-        font-weight: 400;
-        letter-spacing: 0;
-        line-height: 1.14;
-        opacity: 0.72;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
       }
     </style>
   </head>
   <body>
+    <img class="frame-preview" src="preview-v8.png" alt="" aria-hidden="true">
     <main class="content" aria-labelledby="page-title">
       <h1 id="page-title"><span>Restaurant</span><span>Drop Times</span></h1>
       <p>A quick reference for when reservations typically open.</p>
