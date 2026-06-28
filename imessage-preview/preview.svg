@@ -1,5 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1139" height="630" viewBox="0 0 1139 630">
   <rect width="1139" height="630" fill="#1D1D1D"/>
-  <text x="48" y="92" fill="#ffffff" fill-opacity="0.9" font-family="Helvetica, Arial, sans-serif" font-size="64" font-weight="400" letter-spacing="0">Restaurant Drop Times</text>
-  <text x="48" y="139" fill="#ffffff" fill-opacity="0.72" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="400" letter-spacing="0">A quick reference for when reservations typically open.</text>
+  <text x="62.58" y="155" fill="#ffffff" fill-opacity="0.9" font-family="Helvetica, Arial, sans-serif" font-size="100.132" font-weight="400" letter-spacing="0">
+    <tspan x="62.58" dy="0">Restaurant</tspan>
+    <tspan x="62.58" dy="101.133">Drop Times</tspan>
+  </text>
+  <text x="62.58" y="338" fill="#ffffff" fill-opacity="0.72" font-family="Helvetica, Arial, sans-serif" font-size="45.894" font-weight="400" letter-spacing="0">
+    <tspan x="62.58" dy="0">A quick reference for when reservations typically</tspan>
+    <tspan x="62.58" dy="52.319">open.</tspan>
+  </text>
 </svg>
