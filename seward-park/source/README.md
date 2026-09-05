@@ -2,6 +2,8 @@
 
 An interactive 3D diorama of the table tennis area at Seward Park in New York City. The viewer includes day and night lighting, a gentle breeze, falling leaves, and an OBJ download.
 
+Revision 7 has four matching stone columns, a 20% smaller STTA decal, a red Nittaku Violin-style paddle, and a black Nittaku Septear-style paddle on the opposite half of the table.
+
 ![Seward Park diorama](public/screenshot.jpeg)
 
 ## Run locally
@@ -44,7 +46,7 @@ The build sets `NEXT_PUBLIC_BASE_PATH` so the model, decoder, favicon, and downl
 
 ### Link previews
 
-Open Graph and Twitter metadata are included in the exported HTML, so previews do not require JavaScript or the 3D model. The 1200 × 750 JPEG at `public/park-preview-v2.jpg` supplies the large preview, with `public/apple-touch-icon.png` as the Apple icon fallback. Keep old preview images available when publishing a new version.
+Open Graph and Twitter metadata are included in the exported HTML, so previews do not require JavaScript or the 3D model. The 1200 × 750 JPEG at `public/park-preview-v3.jpg` supplies the large preview, with `public/apple-touch-icon.png` as the Apple icon fallback. Keep old preview images available when publishing a new version.
 
 Share the normal URL: `https://willieip.me/seward-park`. The canonical URL, Open Graph URL, and Twitter URL all identify that address. GitHub Pages serves its directory through a standard HTTPS redirect. No query parameters or separate preview page are required.
 

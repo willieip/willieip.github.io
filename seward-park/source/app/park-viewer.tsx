@@ -35,7 +35,7 @@ export default function ParkViewer({ modelVersion }: { modelVersion: string }) {
     <button className="viewer-control" onClick={resetView} disabled={!ready} aria-label="Reset view" title="Reset view (0)">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10a9 9 0 1 1 2.6 8.5M3 4v6h6"/></svg>
     </button>
-    <a className="viewer-control" href={assetPath('/downloads/seward-park-obj.zip')} download="Seward-Park-OBJ.zip" aria-label="Download OBJ model" title="Download OBJ model and materials">
+    <a className="viewer-control" href={assetPath('/downloads/seward-park-obj.zip') + '?v=' + encodeURIComponent(modelVersion)} download="Seward-Park-OBJ.zip" aria-label="Download OBJ model" title="Download OBJ model and materials">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4"/></svg>
     </a>
     <button className="viewer-control night-toggle" onClick={toggleNight} disabled={!ready} aria-pressed={night}
