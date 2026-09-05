@@ -2,5 +2,5 @@
 2:I[60966,["/seward-park/_next/static/chunks/0b-.ij0mqhtov.js","/seward-park/_next/static/chunks/187v.rtes3y.z.js"],"default"]
 3:I[77916,["/seward-park/_next/static/chunks/0b-.ij0mqhtov.js"],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"modelVersion":"v6-circular-bench-matched-paving"}],[["$","script","script-0",{"src":"/seward-park/_next/static/chunks/187v.rtes3y.z.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"ChQql6p8R86jSDhmfFfcU"}
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"modelVersion":"v6-circular-bench-matched-paving"}],[["$","script","script-0",{"src":"/seward-park/_next/static/chunks/187v.rtes3y.z.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"W8c5I5xbLOZBftiBL9ZJK"}
 5:null

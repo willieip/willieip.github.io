@@ -46,7 +46,7 @@ The build sets `NEXT_PUBLIC_BASE_PATH` so the model, decoder, favicon, and downl
 
 Open Graph and Twitter metadata are included in the exported HTML, so previews do not require JavaScript or the 3D model. The 1200 × 750 JPEG at `public/park-preview-v2.jpg` supplies the large preview, with `public/apple-touch-icon.png` as the Apple icon fallback. Keep old preview images available when publishing a new version.
 
-If Messages retains a preview from before an update, share a fresh URL such as `https://willieip.me/seward-park/?preview=2` to request a new preview.
+Share the normal URL: `https://willieip.me/seward-park`. The canonical URL, Open Graph URL, and Twitter URL all identify that address. GitHub Pages serves its directory through a standard HTTPS redirect. No query parameters or separate preview page are required.
 
 ## Assets
 
