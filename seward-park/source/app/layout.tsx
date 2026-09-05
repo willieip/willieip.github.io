@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { assetPath } from './asset-path';
 const pageUrl = 'https://willieip.me/seward-park';
-const previewUrl = `${pageUrl}/park-preview-v3.jpg`;
+const previewUrl = `${pageUrl}/park-preview-v4.jpg`;
 const title = 'Seward Park 3D Diorama';
 const description = 'Explore an interactive 3D diorama of Seward Park’s table tennis area.';
 const previewAlt = 'An isometric rendering of Seward Park’s table tennis court, curved stone bench, and surrounding trees.';
