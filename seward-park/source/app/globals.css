@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#eeeee7}.viewer,.scene{width:100%;height:100dvh}.scene{touch-action:none;cursor:grab;outline:none}.scene:active{cursor:grabbing}.scene canvas{display:block;width:100%;height:100%}
+.viewer-controls{position:fixed;right:max(22px,env(safe-area-inset-right));bottom:max(22px,env(safe-area-inset-bottom));display:flex;gap:10px}
+.viewer-control{width:46px;height:46px;padding:0;border:1px solid #2223;border-radius:50%;background:#f9f9f3b8;color:#343a34;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(12px);transition:background .3s,color .3s;box-shadow:0 3px 18px #00000008;text-decoration:none}
+.viewer-control svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.viewer-control:hover{background:#fffef5ed}.viewer-control:focus-visible{outline:2px solid currentColor;outline-offset:4px}.viewer-control:disabled{opacity:0;pointer-events:none}.viewer[data-night=true] .viewer-control{background:#182638b8;color:#ebd5a8;border-color:#ffffff26}.viewer[data-night=true] .viewer-control:hover{background:#24354cf2}.scene[data-camera-mode=free]{cursor:crosshair}
+@media(prefers-reduced-motion:reduce){.viewer-control{transition:none}}

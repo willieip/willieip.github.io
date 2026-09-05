@@ -1,0 +1,6 @@
+# Include the static park viewer in the existing GitHub Pages build.
+include:
+  - _next
+  - seward-park/_next
+exclude:
+  - seward-park/source
