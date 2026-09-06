@@ -7,6 +7,8 @@ import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { createFreeCamera } from './free-camera';
 import { createParkWind } from './wind';
 import { assetPath } from './asset-path';
+import { createParkLighting } from './park-lighting';
+import type { LightingMode, LightingStatus } from './solar';
 
 type View = 'Overview' | 'Court' | 'Entrance' | 'Above';
 const presets: Record<View, {position: number[]; target: number[]}> = {
@@ -15,7 +17,7 @@ const presets: Record<View, {position: number[]; target: number[]}> = {
   Entrance: {position: [5.2,5.1,1.9], target: [-2.5,.8,-1.3]},
   Above: {position: [.01,26,.2], target: [0,0,0]},
 };
-export async function createParkViewer(host: HTMLDivElement, progress: (p: number) => void, modelVersion: string) {
+export async function createParkViewer(host: HTMLDivElement, progress: (p: number) => void, modelVersion: string, onLightingChange?: (status: LightingStatus) => void) {
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const scene = new THREE.Scene();
   const bg = new THREE.Color('#eeeee7'); scene.background = bg;
@@ -31,11 +33,12 @@ export async function createParkViewer(host: HTMLDivElement, progress: (p: numbe
   renderer.domElement.setAttribute('aria-hidden','true');host.appendChild(renderer.domElement);
   const controls = new OrbitControls(camera,renderer.domElement);
   controls.enableDamping=true;controls.dampingFactor=.085;
-  controls.minDistance=2.2;controls.maxDistance=65;controls.maxPolarAngle=Math.PI*.48;
+  controls.minDistance=.08;controls.maxDistance=65;controls.maxPolarAngle=Math.PI*.48;
+  controls.zoomToCursor=true;
   controls.autoRotateSpeed=.45;controls.screenSpacePanning=true;
   const hemi = new THREE.HemisphereLight(0xf5f5e9,0x899382,1.7);scene.add(hemi);
   const sun = new THREE.DirectionalLight(0xfff3db,2.6);sun.position.set(-6,15,8);sun.castShadow=true;
-  sun.shadow.mapSize.set(2048,2048);Object.assign(sun.shadow.camera,{left:-12,right:12,top:12,bottom:-12,near:.1,far:45});
+  sun.shadow.mapSize.set(2048,2048);Object.assign(sun.shadow.camera,{left:-14,right:14,top:14,bottom:-14,near:.1,far:70});
   sun.shadow.bias=-.00015;sun.shadow.normalBias=.025;sun.shadow.radius=3;scene.add(sun);
   const fill=new THREE.DirectionalLight(0xd7e7ef,.7);fill.position.set(9,9,-6);scene.add(fill);
   const pmrem=new THREE.PMREMGenerator(renderer);const room=new RoomEnvironment();const env=pmrem.fromScene(room,.04);scene.environment=env.texture;scene.environmentIntensity=.22;room.dispose();pmrem.dispose();
@@ -64,38 +67,55 @@ export async function createParkViewer(host: HTMLDivElement, progress: (p: numbe
     freeCamera.reset();autoRotate=false;interacted=false;
     if(fitToViewport)fitToViewport(false);else view('Overview');
   }
-  let nightTarget=0, nightAmount=0;
   const glowing = new Set<THREE.MeshStandardMaterial>();
   const lamps: { light: THREE.Light; power: number }[] = [];
-  const dayColor=new THREE.Color('#eeeee7'), nightColor=new THREE.Color('#081321');
-  const sunDay=new THREE.Color(0xfff3db), sunNight=new THREE.Color(0x7796c6);
-  function night(on:boolean) { nightTarget=on?1:0; dirty=true; renderer.shadowMap.needsUpdate=true; host.dataset.night=String(on); }
-  host.dataset.night='false';
+  const lighting = createParkLighting({ scene, background:bg, sun, hemisphere:hemi, fill, lamps, glowing, reducedMotion,
+    onChange:(status, position)=>{
+      host.dataset.night=String(status.isNight);host.dataset.lightingMode=status.mode;host.dataset.dayPhase=status.phase;
+      host.dataset.sunAltitude=position.altitude.toFixed(3);host.dataset.sunAzimuth=position.azimuth.toFixed(3);
+      host.dataset.newYorkTime=status.timeLabel;onLightingChange?.(status);
+    },
+  });
+  function setLighting(mode:LightingMode) { lighting.setMode(mode);dirty=true;renderer.shadowMap.needsUpdate=true; }
+  function night(on:boolean) { setLighting(on?'night':'day'); }
+  function wakeLighting() { if(document.visibilityState==='visible'){lighting.refresh(true);dirty=true;renderer.shadowMap.needsUpdate=true;} }
+  document.addEventListener('visibilitychange',wakeLighting);
+  const focusRay=new THREE.Raycaster(),pointer=new THREE.Vector2();
+  function focusDetail(event:MouseEvent) {
+    const rect=renderer.domElement.getBoundingClientRect();
+    pointer.set((event.clientX-rect.left)/rect.width*2-1,-(event.clientY-rect.top)/rect.height*2+1);
+    focusRay.setFromCamera(pointer,camera);
+    const hit=focusRay.intersectObjects([...site.children,...treeCanopy.children],false)[0];
+    if(!hit)return;
+    freeCamera.reset();autoRotate=false;interacted=true;
+    const direction=camera.position.clone().sub(hit.point).normalize();
+    const distance=Math.max(controls.minDistance,Math.min(camera.position.distanceTo(hit.point),2.2));
+    const position=hit.point.clone().addScaledVector(direction,distance);
+    if(reducedMotion){camera.position.copy(position);controls.target.copy(hit.point);controls.update();destination=null;}
+    else destination={position,target:hit.point.clone()};
+    dirty=true;
+  }
+  renderer.domElement.addEventListener('dblclick',focusDetail);
   const clock = new THREE.Clock();
   function render(){if(disposed)return;const dt=Math.min(clock.getDelta(),.05);
     if(destination){dirty=true;const t=1-Math.exp(-dt*7);camera.position.lerp(destination.position,t);controls.target.lerp(destination.target,t);if(camera.position.distanceTo(destination.position)<.005&&controls.target.distanceTo(destination.target)<.005){camera.position.copy(destination.position);controls.target.copy(destination.target);destination=null;}}
     freeCamera.update(dt);
     shadowElapsed+=dt;
     if(wind?.update(dt)){dirty=true;if(shadowElapsed>.10){renderer.shadowMap.needsUpdate=true;shadowElapsed=0;}}
-    if(Math.abs(nightAmount-nightTarget)>.001){
-      nightAmount=reducedMotion?nightTarget:THREE.MathUtils.lerp(nightAmount,nightTarget,1-Math.exp(-dt*3));dirty=true;
-    }else nightAmount=nightTarget;
-    bg.copy(dayColor).lerp(nightColor,nightAmount);
-    hemi.intensity=THREE.MathUtils.lerp(1.7,.16,nightAmount);
-    sun.intensity=THREE.MathUtils.lerp(2.6,.10,nightAmount);sun.color.copy(sunDay).lerp(sunNight,nightAmount);
-    fill.intensity=THREE.MathUtils.lerp(.7,.29,nightAmount);
-    scene.environmentIntensity=THREE.MathUtils.lerp(.22,.06,nightAmount);
-    for(const {light,power} of lamps)light.intensity=power*nightAmount;
-    for(const m of glowing)m.emissiveIntensity=nightAmount*3.5;
+    if(lighting.update(dt)){dirty=true;if(shadowElapsed>.10){renderer.shadowMap.needsUpdate=true;shadowElapsed=0;}}
     controls.autoRotate=autoRotate&&!destination&&!freeCamera.active;
     const changed=freeCamera.active?false:controls.update(dt);
+    // Preserve depth precision in the overview while allowing millimeter-scale
+    // clipping distances when inspecting the paddle or net hardware up close.
+    const near=freeCamera.active ? .005 : Math.max(.0015,Math.min(.12,camera.position.distanceTo(controls.target)*.02));
+    if(Math.abs(camera.near-near)>1e-5){camera.near=near;camera.updateProjectionMatrix();dirty=true;}
     if(changed||dirty||autoRotate){renderer.render(scene,camera);dirty=false;}
   }
   renderer.setAnimationLoop(render);
   const observer=new ResizeObserver(()=>{if(disposed)return;dirty=true;camera.aspect=host.clientWidth/host.clientHeight;camera.updateProjectionMatrix();renderer.setSize(host.clientWidth,host.clientHeight);if(!interacted)fitToViewport?.();});observer.observe(host);
   const cancelMove=()=>{destination=null;interacted=true;};controls.addEventListener('start',cancelMove);
   function zoom(factor:number){dirty=true;destination=null;camera.position.sub(controls.target).multiplyScalar(factor).add(controls.target);controls.update();}
-  function dispose(){if(disposed)return;disposed=true;observer.disconnect();controls.dispose();renderer.setAnimationLoop(null);freeCamera.dispose();wind?.dispose();draco.dispose();env.dispose();
+  function dispose(){if(disposed)return;disposed=true;observer.disconnect();controls.dispose();renderer.setAnimationLoop(null);freeCamera.dispose();wind?.dispose();draco.dispose();env.dispose();document.removeEventListener('visibilitychange',wakeLighting);renderer.domElement.removeEventListener('dblclick',focusDetail);
     const materials=new Set<THREE.Material>();scene.traverse(o=>{if(o instanceof THREE.Mesh){o.geometry.dispose();for(const m of Array.isArray(o.material)?o.material:[o.material])materials.add(m);}});materials.forEach(m=>m.dispose());renderer.dispose();renderer.domElement.remove();}
   try{
     const gltf=await loader.loadAsync(assetPath('/park.glb')+'?v='+encodeURIComponent(modelVersion),e=>progress(e.total?Math.min(94,e.loaded/e.total*94):Math.min(90,e.loaded/14000000*90)));
@@ -158,7 +178,7 @@ export async function createParkViewer(host: HTMLDivElement, progress: (p: numbe
     progress(100);dirty=true;render();
   }catch(error){dispose();throw error;}
   return {
-    night,view,zoom,reset:resetView,canopy:(show:boolean)=>{treeCanopy.visible=show;dirty=true;renderer.shadowMap.needsUpdate=true;},rotate:(on:boolean)=>{autoRotate=on;},
+    night,lighting:setLighting,view,zoom,reset:resetView,canopy:(show:boolean)=>{treeCanopy.visible=show;dirty=true;renderer.shadowMap.needsUpdate=true;},rotate:(on:boolean)=>{autoRotate=on;},
     snapshot:()=>{renderer.render(scene,camera);const a=document.createElement('a');a.download='seward-park-view.png';a.href=renderer.domElement.toDataURL('image/png');a.click();},dispose,
   };
 }

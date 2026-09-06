@@ -1,6 +1,6 @@
 # Seward Park
 
-An interactive 3D diorama of the table tennis area at Seward Park in New York City. The viewer includes day and night lighting, a gentle breeze, falling leaves, and an OBJ download.
+An interactive 3D diorama of the table tennis area at Seward Park in New York City. The viewer follows the live sun by default, with moving shadows, dusk, nighttime park lighting, a gentle breeze, falling leaves, and an OBJ download.
 
 Revision 8 removes the Cornilleau and PARK lettering and connects both net mounts to the tabletop and apron. It retains the matching stone columns, smaller STTA decal, and red and black reference paddles.
 
@@ -19,13 +19,21 @@ Open `http://localhost:3000`.
 
 ## Controls
 
-- Drag to orbit; scroll or pinch to zoom; right-drag to pan.
+- Drag to orbit; scroll or pinch to zoom; right-drag to pan. Scroll zoom follows the cursor and can approach within 8 cm of the focus point.
+- Double-click a detail to focus on it, then zoom closer to inspect the paddles, decal, or net hardware.
 - Click the scene, then use the arrow keys or WASD to move in the direction you are looking. Left and right strafe.
 - Drag while moving to look around. Q/E move down/up. Shift moves faster.
 - Escape returns to orbit. Zero or the reset button returns to the overview.
-- The moon/sun button or N switches between day and night.
+- The clock button or L follows the current sun in New York. This is the default on every visit.
+- The moon/sun button or N selects manual daytime or nighttime. Use the clock button to return to live sunlight.
 - The download button saves the OBJ model and its material library.
-- Reduced-motion preferences keep the trees and falling leaves still.
+- Reduced-motion preferences keep the trees and falling leaves still and apply lighting changes immediately.
+
+## Live sunlight
+
+Sun altitude and azimuth are calculated locally from the current UTC instant and Seward Park's coordinates (40.71483 N, 73.98915 W), using the [NOAA/Meeus solar equations](https://gml.noaa.gov/grad/solcalc/calcdetails.html). The clock label uses `America/New_York`, including daylight saving time. Scene coordinates use +X east, -Z north, and +Y up.
+
+The sun position refreshes every 30 seconds and immediately when returning to the tab. Sky color, direct light, ambient light, and the park lamps change smoothly through dawn and dusk. The visual palette represents clear conditions. Calculations work without an external service or location permission.
 
 ## Validate
 
