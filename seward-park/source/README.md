@@ -2,7 +2,7 @@
 
 An interactive 3D diorama of the table tennis area at Seward Park in New York City. The viewer follows the live sun by default, with moving shadows, dusk, nighttime park lighting, a gentle breeze, falling leaves, and an OBJ download.
 
-Revision 8 removes the Cornilleau and PARK lettering and connects both net mounts to the tabletop and apron. It retains the matching stone columns, smaller STTA decal, and red and black reference paddles.
+Revision 9 connects all eight pointed gate caps to their uprights. It retains the removed table lettering, attached net mounts, matching stone columns, smaller STTA decal, and red and black reference paddles.
 
 ![Seward Park diorama](public/screenshot.jpeg)
 
