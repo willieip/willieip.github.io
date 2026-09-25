@@ -2,7 +2,7 @@
 
 An interactive 3D diorama of the table tennis area at Seward Park in New York City. The viewer follows the live sun by default, with moving shadows, dusk, nighttime park lighting, a gentle breeze, falling leaves, and an OBJ download.
 
-Revision 9 connects all eight pointed gate caps to their uprights. It retains the removed table lettering, attached net mounts, matching stone columns, smaller STTA decal, and red and black reference paddles.
+Revision 11 matches both paddle handles to the supplied close-up photos: the Violin has pink stripes, a black badge, and white script; the Septear has brown wood, dark edge strips, and a silver badge with red lettering. The supplied spider drawing is matte black graffiti on the court-facing side of the rear bench column. All eight pointed gate caps remain connected to their uprights. It retains the removed table lettering, attached net mounts, matching stone columns, smaller STTA decal, and red and black paddle faces.
 
 ![Seward Park diorama](public/screenshot.jpeg)
 
